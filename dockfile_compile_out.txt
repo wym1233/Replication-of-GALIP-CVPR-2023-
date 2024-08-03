@@ -1,0 +1,186 @@
+Sending build context to Docker daemon 3.072kB
+
+
+Step 1/2 : FROM 10.11.3.8:5000/bitahub/pytorch:1.13.0-cuda11.6-cudnn8-runtime
+---> 611243945a89
+Step 2/2 : RUN pip install torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install easydict -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install pandas==1.3.4 -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install pyyaml -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install ipykernel -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install numpy==1.19.5 -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install scipy==1.10.0 -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install tensorboard -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install ftfy -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install regex -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install packaging -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install pytest -i https://pypi.tuna.tsinghua.edu.cn/simple && pip install git+https://gitee.com/mirror-sd/CLIP.git && pip cache purge
+---> Running in 0297d879c9e6
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: torchvision in /opt/conda/lib/python3.9/site-packages (0.14.0)
+Requirement already satisfied: typing_extensions in /opt/conda/lib/python3.9/site-packages (from torchvision) (4.4.0)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.9/site-packages (from torchvision) (1.22.3)
+Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from torchvision) (2.27.1)
+Requirement already satisfied: torch in /opt/conda/lib/python3.9/site-packages (from torchvision) (1.13.0)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /opt/conda/lib/python3.9/site-packages (from torchvision) (9.0.1)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision) (2022.9.24)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision) (1.26.8)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision) (3.3)
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting easydict
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/05/ec/fa6963f1198172c2b75c9ab6ecefb3045991f92f75f5eb41b6621b198123/easydict-1.13-py3-none-any.whl (6.8 kB)
+Installing collected packages: easydict
+Successfully installed easydict-1.13
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pandas==1.3.4
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/48/b4/1081d66b71c4dfc1bc1e19d6f2abbf93ed42f69df7703eb323742d45423e/pandas-1.3.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.5 MB)
+Requirement already satisfied: pytz>=2017.3 in /opt/conda/lib/python3.9/site-packages (from pandas==1.3.4) (2022.1)
+Requirement already satisfied: python-dateutil>=2.7.3 in /opt/conda/lib/python3.9/site-packages (from pandas==1.3.4) (2.8.2)
+Requirement already satisfied: numpy>=1.17.3 in /opt/conda/lib/python3.9/site-packages (from pandas==1.3.4) (1.22.3)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil>=2.7.3->pandas==1.3.4) (1.16.0)
+Installing collected packages: pandas
+Successfully installed pandas-1.3.4
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: pyyaml in /opt/conda/lib/python3.9/site-packages (6.0)
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: ipykernel in /opt/conda/lib/python3.9/site-packages (6.17.1)
+Requirement already satisfied: tornado>=6.1 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (6.2)
+Requirement already satisfied: matplotlib-inline>=0.1 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (0.1.6)
+Requirement already satisfied: packaging in /opt/conda/lib/python3.9/site-packages (from ipykernel) (21.3)
+Requirement already satisfied: psutil in /opt/conda/lib/python3.9/site-packages (from ipykernel) (5.8.0)
+Requirement already satisfied: traitlets>=5.1.0 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (5.5.0)
+Requirement already satisfied: pyzmq>=17 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (24.0.1)
+Requirement already satisfied: jupyter-client>=6.1.12 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (7.4.7)
+Requirement already satisfied: ipython>=7.23.1 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (8.4.0)
+Requirement already satisfied: debugpy>=1.0 in /opt/conda/lib/python3.9/site-packages (from ipykernel) (1.6.3)
+Requirement already satisfied: nest-asyncio in /opt/conda/lib/python3.9/site-packages (from ipykernel) (1.5.6)
+Requirement already satisfied: pexpect>4.3 in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (4.8.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (3.0.20)
+Requirement already satisfied: jedi>=0.16 in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (0.18.1)
+Requirement already satisfied: decorator in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (5.1.1)
+Requirement already satisfied: pickleshare in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (0.7.5)
+Requirement already satisfied: stack-data in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (0.2.0)
+Requirement already satisfied: backcall in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (0.2.0)
+Requirement already satisfied: setuptools>=18.5 in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (61.2.0)
+Requirement already satisfied: pygments>=2.4.0 in /opt/conda/lib/python3.9/site-packages (from ipython>=7.23.1->ipykernel) (2.11.2)
+Requirement already satisfied: parso<0.9.0,>=0.8.0 in /opt/conda/lib/python3.9/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel) (0.8.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /opt/conda/lib/python3.9/site-packages (from jupyter-client>=6.1.12->ipykernel) (2.8.2)
+Requirement already satisfied: entrypoints in /opt/conda/lib/python3.9/site-packages (from jupyter-client>=6.1.12->ipykernel) (0.4)
+Requirement already satisfied: jupyter-core>=4.9.2 in /opt/conda/lib/python3.9/site-packages (from jupyter-client>=6.1.12->ipykernel) (5.0.0)
+Requirement already satisfied: platformdirs in /opt/conda/lib/python3.9/site-packages (from jupyter-core>=4.9.2->jupyter-client>=6.1.12->ipykernel) (2.5.4)
+Requirement already satisfied: ptyprocess>=0.5 in /opt/conda/lib/python3.9/site-packages (from pexpect>4.3->ipython>=7.23.1->ipykernel) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/conda/lib/python3.9/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->ipython>=7.23.1->ipykernel) (0.2.5)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.9/site-packages (from python-dateutil>=2.8.2->jupyter-client>=6.1.12->ipykernel) (1.16.0)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /opt/conda/lib/python3.9/site-packages (from packaging->ipykernel) (3.0.9)
+Requirement already satisfied: executing in /opt/conda/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel) (0.8.3)
+Requirement already satisfied: asttokens in /opt/conda/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel) (2.0.5)
+Requirement already satisfied: pure-eval in /opt/conda/lib/python3.9/site-packages (from stack-data->ipython>=7.23.1->ipykernel) (0.2.2)
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting numpy==1.19.5
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f7/50/02c0fb5d913901ad643934713a31567df9b5065c28efc9672b707f80dfb1/numpy-1.19.5-cp39-cp39-manylinux2010_x86_64.whl (14.9 MB)
+Installing collected packages: numpy
+Attempting uninstall: numpy
+Found existing installation: numpy 1.22.3
+Uninstalling numpy-1.22.3:
+Successfully uninstalled numpy-1.22.3
+Successfully installed numpy-1.19.5
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scipy==1.10.0
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/30/71/bb9e677e30c52f938ff71ba528915c579e794ac0f59804e06bfed3596dff/scipy-1.10.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.4 MB)
+Requirement already satisfied: numpy<1.27.0,>=1.19.5 in /opt/conda/lib/python3.9/site-packages (from scipy==1.10.0) (1.19.5)
+Installing collected packages: scipy
+Successfully installed scipy-1.10.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorboard
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0a/32/2e8545fb0592f33e3aca5951e8b01008b76d61b440658cbdc37b4eaebf0b/tensorboard-2.17.0-py3-none-any.whl (5.5 MB)
+Collecting protobuf!=4.24.0,<5.0.0,>=3.19.6
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/15/db/7f731524fe0e56c6b2eb57d05b55d3badd80ef7d1f1ed59db191b2fdd8ab/protobuf-4.25.3-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+Collecting markdown>=2.6.8
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fc/b3/0c0c994fe49cd661084f8d5dc06562af53818cc0abefaca35bdc894577c3/Markdown-3.6-py3-none-any.whl (105 kB)
+Requirement already satisfied: six>1.9 in /opt/conda/lib/python3.9/site-packages (from tensorboard) (1.16.0)
+Requirement already satisfied: setuptools>=41.0.0 in /opt/conda/lib/python3.9/site-packages (from tensorboard) (61.2.0)
+Collecting grpcio>=1.48.2
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/01/2b/7951479d37541aedbb790ffc4d527dedfceca14fdef9dc3f41a253bb0f46/grpcio-1.64.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.6 MB)
+Collecting werkzeug>=1.0.1
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9d/6e/e792999e816d19d7fcbfa94c730936750036d65656a76a5a688b57a656c4/werkzeug-3.0.3-py3-none-any.whl (227 kB)
+Collecting absl-py>=0.4
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a2/ad/e0d3c824784ff121c03cc031f944bc7e139a8f1870ffd2845cc2dd76f6c4/absl_py-2.1.0-py3-none-any.whl (133 kB)
+Requirement already satisfied: numpy>=1.12.0 in /opt/conda/lib/python3.9/site-packages (from tensorboard) (1.19.5)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/7a/13/e503968fefabd4c6b2650af21e110aa8466fe21432cd7c43a84577a89438/tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Requirement already satisfied: importlib-metadata>=4.4 in /opt/conda/lib/python3.9/site-packages (from markdown>=2.6.8->tensorboard) (5.0.0)
+Requirement already satisfied: zipp>=0.5 in /opt/conda/lib/python3.9/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard) (3.10.0)
+Collecting MarkupSafe>=2.1.1
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/5f/5a/360da85076688755ea0cceb92472923086993e86b5613bbae9fbc14136b0/MarkupSafe-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Installing collected packages: MarkupSafe, werkzeug, tensorboard-data-server, protobuf, markdown, grpcio, absl-py, tensorboard
+Attempting uninstall: MarkupSafe
+Found existing installation: MarkupSafe 2.0.1
+Uninstalling MarkupSafe-2.0.1:
+Successfully uninstalled MarkupSafe-2.0.1
+Successfully installed MarkupSafe-2.1.5 absl-py-2.1.0 grpcio-1.64.1 markdown-3.6 protobuf-4.25.3 tensorboard-2.17.0 tensorboard-data-server-0.7.2 werkzeug-3.0.3
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting ftfy
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f4/f0/21efef51304172736b823689aaf82f33dbc64f54e9b046b75f5212d5cee7/ftfy-6.2.0-py3-none-any.whl (54 kB)
+Collecting wcwidth<0.3.0,>=0.2.12
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+Installing collected packages: wcwidth, ftfy
+Attempting uninstall: wcwidth
+Found existing installation: wcwidth 0.2.5
+Uninstalling wcwidth-0.2.5:
+Successfully uninstalled wcwidth-0.2.5
+Successfully installed ftfy-6.2.0 wcwidth-0.2.13
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting regex
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/93/6c/3d801cd9c4d1e18d155cf55f4f1ec37ed2e0a5b52962d4622ee80032ed3d/regex-2024.5.15-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (774 kB)
+Installing collected packages: regex
+Successfully installed regex-2024.5.15
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: packaging in /opt/conda/lib/python3.9/site-packages (21.3)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /opt/conda/lib/python3.9/site-packages (from packaging) (3.0.9)
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mLooking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pytest
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4e/e7/81ebdd666d3bff6670d27349b5053605d83d55548e6bd5711f3b0ae7dd23/pytest-8.2.2-py3-none-any.whl (339 kB)
+Requirement already satisfied: tomli>=1 in /opt/conda/lib/python3.9/site-packages (from pytest) (2.0.1)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /opt/conda/lib/python3.9/site-packages (from pytest) (1.0.0)
+Requirement already satisfied: packaging in /opt/conda/lib/python3.9/site-packages (from pytest) (21.3)
+Collecting pluggy<2.0,>=1.5
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/88/5f/e351af9a41f866ac3f1fac4ca0613908d9a41741cfcf2228f4ad853b697d/pluggy-1.5.0-py3-none-any.whl (20 kB)
+Collecting iniconfig
+Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ef/a6/62565a6e1cf69e10f5727360368e451d4b7f58beeac6173dc9db836a5b46/iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /opt/conda/lib/python3.9/site-packages (from packaging->pytest) (3.0.9)
+Installing collected packages: pluggy, iniconfig, pytest
+Successfully installed iniconfig-2.0.0 pluggy-1.5.0 pytest-8.2.2
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mCollecting git+https://gitee.com/mirror-sd/CLIP.git
+Cloning https://gitee.com/mirror-sd/CLIP.git to /tmp/pip-req-build-3dti0plj
+[91m Running command git clone -q https://gitee.com/mirror-sd/CLIP.git /tmp/pip-req-build-3dti0plj
+[0m Resolved https://gitee.com/mirror-sd/CLIP.git to commit a1d071733d7111c9c014f024669f959182114e33
+Requirement already satisfied: ftfy in /opt/conda/lib/python3.9/site-packages (from clip==1.0) (6.2.0)
+Requirement already satisfied: regex in /opt/conda/lib/python3.9/site-packages (from clip==1.0) (2024.5.15)
+Requirement already satisfied: tqdm in /opt/conda/lib/python3.9/site-packages (from clip==1.0) (4.63.0)
+Requirement already satisfied: torch in /opt/conda/lib/python3.9/site-packages (from clip==1.0) (1.13.0)
+Requirement already satisfied: torchvision in /opt/conda/lib/python3.9/site-packages (from clip==1.0) (0.14.0)
+Requirement already satisfied: wcwidth<0.3.0,>=0.2.12 in /opt/conda/lib/python3.9/site-packages (from ftfy->clip==1.0) (0.2.13)
+Requirement already satisfied: typing_extensions in /opt/conda/lib/python3.9/site-packages (from torch->clip==1.0) (4.4.0)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.9/site-packages (from torchvision->clip==1.0) (1.19.5)
+Requirement already satisfied: requests in /opt/conda/lib/python3.9/site-packages (from torchvision->clip==1.0) (2.27.1)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /opt/conda/lib/python3.9/site-packages (from torchvision->clip==1.0) (9.0.1)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision->clip==1.0) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision->clip==1.0) (2022.9.24)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision->clip==1.0) (3.3)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/conda/lib/python3.9/site-packages (from requests->torchvision->clip==1.0) (1.26.8)
+Building wheels for collected packages: clip
+Building wheel for clip (setup.py): started
+Building wheel for clip (setup.py): finished with status 'done'
+Created wheel for clip: filename=clip-1.0-py3-none-any.whl size=1369530 sha256=978fad4a0cb75fe6b792b2b51ddff673e32cd0d3813fef8c16cb90fdae7c1459
+Stored in directory: /tmp/pip-ephem-wheel-cache-sur2qagg/wheels/03/9e/e5/4576a9c913623e51102e99872a922ba4be27a162ad2aa77312
+Successfully built clip
+Installing collected packages: clip
+Successfully installed clip-1.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0mFiles removed: 37
+Removing intermediate container 0297d879c9e6
+---> bcf12be3d22f
+Successfully built bcf12be3d22f
+Successfully tagged 10.11.3.8:5000/user-images/galipenv_wym123:latest
